@@ -19,14 +19,14 @@ namespace SEWebApplication.Controllers
         {
             _context = context;
         }
-
+        // Получить всех клиентов
         // GET: api/Clients
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Client>>> GetClientItems()
         {
             return await _context.ClientItems.ToListAsync();
         }
-
+        // Получить клиента по его id
         // GET: api/Clients/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Client>> GetClient(string id)

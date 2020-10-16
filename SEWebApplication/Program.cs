@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -51,6 +53,18 @@ namespace SEWebApplication
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    //webBuilder.UseKestrel(options =>
+                    //                 {
+                    //                     options.Limits.MaxConcurrentConnections = 100;
+                    //                     //options.Limits.MaxRequestBodySize = 10 * 1024;
+                    //                     //options.Limits.MinRequestBodyDataRate =
+                    //                     //    new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+                    //                     //options.Limits.MinResponseDataRate =
+                    //                     //    new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+                    //                     //options.Listen(IPAddress.Loopback, 5500);
+
+                    //                 });
+
                 });
     }
 }

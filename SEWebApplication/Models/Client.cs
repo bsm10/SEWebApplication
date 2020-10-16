@@ -15,6 +15,11 @@ namespace SEWebApplication.Models
         public string Description { get; set; }
         [MaxLength(128)]
         public string Telephone { get; set; }
+        public int Rate { get; set; }
+
+        [Required]
+        [MaxLength(128)]
+        public string Payment { get; set; }
         public bool IsTest { get; set; }
         [Required]
         [MaxLength(128)]

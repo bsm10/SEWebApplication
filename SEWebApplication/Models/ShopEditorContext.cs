@@ -5,10 +5,6 @@ namespace SEWebApplication.Models
 {
     public class SEClientsContext : DbContext
     {
-        //public SEClientsContext(DbContextOptions<SEClientsContext> options) : base(options)
-        //{
-        //}
-
         public DbSet<Client> ClientItems { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
