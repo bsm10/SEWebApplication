@@ -21,7 +21,7 @@ namespace SEWebApplication.Models
             modelBuilder.Entity<Client>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                //entity.HasIndex(e => e.Email).IsUnique();
+                // entity.HasIndex(e => e.Email).IsUnique();
                 entity.Property(e => e.Exprise).HasDefaultValueSql("CURRENT_TIMESTAMP");
             });
             base.OnModelCreating(modelBuilder);
